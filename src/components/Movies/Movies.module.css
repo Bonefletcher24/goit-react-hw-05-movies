@@ -1,0 +1,30 @@
+.movies {
+    padding: 20px;
+  }
+  
+  .movies input {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  .movies button {
+    padding: 10px;
+  }
+  
+  .movies ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .movies li {
+    margin-bottom: 10px;
+  }
+  
+  .movies a {
+    text-decoration: none;
+    color: blue;
+  }
+  
+  .movies a:hover {
+    text-decoration: underline;
+  }

@@ -1,0 +1,22 @@
+.movieDetails {
+    padding: 20px;
+  }
+  
+  .movieDetails ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .movieDetails li {
+    margin-right: 10px;
+  }
+  
+  .movieDetails a {
+    text-decoration: none;
+    color: blue;
+  }
+  
+  .movieDetails a:hover {
+    text-decoration: underline;
+  }

@@ -1,0 +1,21 @@
+.reviews {
+    padding: 20px;
+  }
+  
+  .reviews ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .reviews li {
+    margin-bottom: 10px;
+  }
+  
+  .reviews h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .reviews p {
+    margin: 0;
+  }

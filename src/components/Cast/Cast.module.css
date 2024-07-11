@@ -1,0 +1,12 @@
+.cast {
+    padding: 20px;
+  }
+  
+  .cast ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cast li {
+    margin-bottom: 10px;
+  }
