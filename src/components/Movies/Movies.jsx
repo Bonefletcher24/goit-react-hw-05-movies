@@ -3,7 +3,7 @@ import { fetchMoviesByQuery } from "services/api";
 import { Link } from "react-router-dom";
 import css from './Movies.module.css';
 
-export const Movies = () => {
+const Movies = () => {
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
   
@@ -30,3 +30,5 @@ export const Movies = () => {
       </div>
     );
   };
+
+  export default Movies;
