@@ -1,21 +1,16 @@
 /* src/components/Cast/Cast.module.css */
 
-.cast {
+.container {
     padding: 20px;
-    background-color: #f4f4f4;
-    margin-bottom: 20px;
   }
   
-  .cast h2 {
-    margin-bottom: 10px;
+  .castList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
   }
   
-  .cast ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .cast li {
-    margin-bottom: 10px;
+  .actorName {
+    font-weight: bold;
   }
   
