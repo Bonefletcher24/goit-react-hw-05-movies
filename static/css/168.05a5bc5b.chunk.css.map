@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/168.05a5bc5b.chunk.css","mappings":"AACA,2BACI,YACF","sources":["components/Reviews/Reviews.module.css"],"sourcesContent":["/* src/components/Reviews/Reviews.module.css */\n.container {\n    padding: 20px;\n  }\n  "],"names":[],"sourceRoot":""}
