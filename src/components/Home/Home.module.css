@@ -1,21 +1,5 @@
-.home {
+/* src/components/Home/Home.module.css */
+.container {
     padding: 20px;
   }
   
-  .home ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .home li {
-    margin-bottom: 10px;
-  }
-  
-  .home a {
-    text-decoration: none;
-    color: blue;
-  }
-  
-  .home a:hover {
-    text-decoration: underline;
-  }

@@ -1,48 +1,37 @@
+// src/components/MovieDetails/MovieDetails.jsx
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, Route, Navigate, useNavigate } from 'react-router-dom';
-import { fetchMovieDetails } from 'services/api';
-import css from './MovieDetails.module.css';
-import Cast from '../Cast/Cast';
-import Reviews from '../Reviews/Reviews';
+import { useParams, useLocation, Link, Outlet, useNavigate } from 'react-router-dom';
+import { getMovieDetails } from '../../services/api';
+import styles from './MovieDetails.module.css';
 
 const MovieDetails = () => {
-  const { movieId } = useParams();
-  const navigate = useNavigate(); // Хук для программной навигации
-
-  const [movie, setMovie] = useState(null);
-
-  useEffect(() => {
-    fetchMovieDetails(movieId).then(setMovie);
-  }, [movieId]);
-
-  if (!movie) {
-    return null; // Можно добавить загрузочный индикатор
-  }
-
-  const handleBackClick = () => {
-    navigate('/movies'); // Пример использования navigate для перехода назад на страницу с фильмами
+    const { movieId } = useParams();
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [movie, setMovie] = useState(null);
+  
+    useEffect(() => {
+      getMovieDetails(movieId).then(setMovie);
+    }, [movieId]);
+  
+    if (!movie) {
+      return <div>Loading...</div>;
+    }
+  
+    return (
+      <div className={styles.container}>
+        <button onClick={() => navigate(location.state?.from ?? '/')}>Go back</button>
+        <h1>{movie.title}</h1>
+        <p>{movie.overview}</p>
+        <nav className={styles.navigation}>
+          <Link to="cast" state={{ from: location.state?.from }}>Cast</Link>
+          <Link to="reviews" state={{ from: location.state?.from }}>Reviews</Link>
+        </nav>
+        <div className={styles.outletContainer}>
+          <Outlet />
+        </div>
+      </div>
+    );
   };
-
-  return (
-    <div className={css.movieDetails}>
-      <h1>{movie.title}</h1>
-      <p>{movie.overview}</p>
-      <ul>
-        <li><Link to={`/movies/${movieId}/cast`}>Cast</Link></li>
-        <li><Link to={`/movies/${movieId}/reviews`}>Reviews</Link></li>
-      </ul>
-
-      {/* Используем Routes для вложенных маршрутов */}
-      <Route path="/movies/:movieId/cast" element={<Cast />} />
-      <Route path="/movies/:movieId/reviews" element={<Reviews />} />
-
-      {/* Пример использования navigate */}
-      <button onClick={handleBackClick}>Back to Movies</button>
-
-      {/* Обработка навигации, если нет соответствующего подмаршрута */}
-      <Route path="*" element={<Navigate to="/movies" replace />} />
-    </div>
-  );
-};
-
-export default MovieDetails;
+  
+  export default MovieDetails;

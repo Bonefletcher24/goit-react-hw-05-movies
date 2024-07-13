@@ -1,5 +1,13 @@
+/* src/components/Cast/Cast.module.css */
+
 .cast {
     padding: 20px;
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+  }
+  
+  .cast h2 {
+    margin-bottom: 10px;
   }
   
   .cast ul {
@@ -10,3 +18,4 @@
   .cast li {
     margin-bottom: 10px;
   }
+  

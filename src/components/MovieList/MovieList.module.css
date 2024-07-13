@@ -1,0 +1,10 @@
+/* src/components/MovieList/MovieList.module.css */
+.list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .item {
+    margin: 10px 0;
+  }
+  

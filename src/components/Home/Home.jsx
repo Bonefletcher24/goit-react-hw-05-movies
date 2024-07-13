@@ -1,27 +1,22 @@
-import React, { useEffect, useState} from 'react';
-import { fetchTrendingMovies } from 'services/api';
-import { Link } from 'react-router-dom';
-import css from './Home.module.css';
+// src/components/Home/Home.jsx
+import React, { useEffect, useState } from 'react';
+import { getTrendingMovies } from '../../services/api';
+import MovieList from '../MovieList/MovieList';
+import styles from './Home.module.css';
 
 const Home = () => {
-    const [movies, setMovies] = useState([]);
-  
-    useEffect(() => {
-      fetchTrendingMovies().then(setMovies);
-    }, []);
-  
-    return (
-      <div className={css.home}>
-        <h1>Trending Movies</h1>
-        <ul>
-          {movies.map(movie => (
-            <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
+  const [movies, setMovies] = useState([]);
 
-  export default Home;
+  useEffect(() => {
+    getTrendingMovies().then(setMovies);
+  }, []);
+
+  return (
+    <div className={styles.container}>
+      <h1>Trending Movies</h1>
+      <MovieList movies={movies} />
+    </div>
+  );
+};
+
+export default Home;

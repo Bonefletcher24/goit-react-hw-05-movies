@@ -1,22 +1,17 @@
-.movieDetails {
+/* src/components/MovieDetails/MovieDetails.module.css */
+
+.container {
     padding: 20px;
   }
   
-  .movieDetails ul {
-    list-style: none;
-    padding: 0;
+  .navigation {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
   }
   
-  .movieDetails li {
-    margin-right: 10px;
+  .outletContainer {
+    margin-top: 20px;
   }
   
-  .movieDetails a {
-    text-decoration: none;
-    color: blue;
-  }
-  
-  .movieDetails a:hover {
-    text-decoration: underline;
-  }
